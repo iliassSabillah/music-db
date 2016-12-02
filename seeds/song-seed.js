@@ -35,3 +35,4 @@ Song.sync({force: true})
 ], {validate: true}))
 // if everything is correct, you should only have THREE artists in your database
 .catch((err) => console.log(err));
+
