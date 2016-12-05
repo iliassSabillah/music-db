@@ -9,7 +9,7 @@ const Genre = require('./genre-model');
 
 const Song = sequelizeConnection.define('song', {
     title: {type: Sequelize.STRING,
-            validate: {len:[1,100]}
+            validate: {len:[1,250]}
             },
     youtube_url:{type: Sequelize.STRING,
                 validate: {len:[1,100],

@@ -11,4 +11,5 @@ sequelizeConnection
 .catch((err) => console.log('Unable to connect to the database:', err))
 
 //export out the databsae connection to be used elsewhere (for example, creating models and accessing our database in our API)
-module.exports = sequelizeConnection
+module.exports = sequelizeConnection;
+

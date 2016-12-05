@@ -6,7 +6,9 @@ const sequelizeConnection = require('../db');
 //////////
 
 const Artist = sequelizeConnection.define('artist', {
-    name: {type: Sequelize.STRING}
+    name: {type: Sequelize.STRING,
+                validate: {len:[1,100]}
+            }
 });
 
 

@@ -27,6 +27,7 @@ Song.sync({force: true})
 .then((song) => {
   song.addGenres([1])
 })
+
 //the following artists should NOT be added to your database:
 //(if your validations are setup correctly)
 .then(() => Song.bulkCreate([

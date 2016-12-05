@@ -5,8 +5,7 @@ const sequelizeConnection = require('../db');
 // YOUR CODE HERE:
 //////////
 const Genre = sequelizeConnection.define('genre', {
-    title: {type: Sequelize.STRING,
-            validate: {len:[1,100]}}
+    title: {type: Sequelize.STRING(100),notEmpty:true}
 });
 
 module.exports = Genre;

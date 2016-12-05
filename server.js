@@ -12,11 +12,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //listen on port 8888
 app.listen('9999', () => console.log('Listening on port 9999'));
 
-
+app.use(express.static(path.join(__dirname, '/front/bundle')));
 //////////
 // YOUR CODE HERE:
 //////////
 app.use('/api/artists', require('./routes/index').artistRouter);
 app.use('/api/songs', require('./routes/index').songRouter);
-app.use('/api/playlist',require('./routes/index').playlistRouter);
-app.use('/api/genre', require('./routes/index').genreRouter);
+app.use('/api/playlists',require('./routes/index').playlistRouter);
+app.use('/api/genres', require('./routes/index').genreRouter);
+
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, '/front/index.html'));
+});
