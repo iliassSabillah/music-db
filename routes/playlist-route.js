@@ -4,7 +4,7 @@ var Playlist = require('../models/playlist-model');
 
 
 playlistRouter.route('/',(req,res)=>{
-    playlist.findAll().then((playlist)=>{
+    Playlist.findAll().then((playlist)=>{
     res.send(playlist)
 })
 })

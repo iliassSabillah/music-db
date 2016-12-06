@@ -16,8 +16,10 @@ app.use(express.static(path.join(__dirname, '/front/bundle')));
 //////////
 // YOUR CODE HERE:
 //////////
-app.use('/api/tweets', require('./routes/index').homeRouter);
-
+app.use('/api/artists', require('./routes/index').artistRouter);
+app.use('/api/songs', require('./routes/index').songRouter);
+app.use('/api/genres', require('./routes/index').genreRouter);
+app.use('/api/playlists', require('./routes/index').playlistRouter);
 
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, '/front/index.html'));
