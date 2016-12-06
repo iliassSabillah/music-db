@@ -6,7 +6,7 @@ const Song = require('./song-model')
 //////////
 const Playlist = sequelizeConnection.define('playlist', {
     title: {type: Sequelize.STRING,
-            validate: {len:[1,100]}}
+            validate: {len:[1,100],notEmpty:true}}
 });
 
 Playlist.belongsToMany(Song, ({through: 'Song_playlist'}));

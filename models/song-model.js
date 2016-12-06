@@ -13,7 +13,8 @@ const Song = sequelizeConnection.define('song', {
             },
     youtube_url:{type: Sequelize.STRING,
                 validate: {len:[1,100],
-                            isUrl: true
+                            isUrl: true,
+                            notEmpty:true
                         }
             }
 });
