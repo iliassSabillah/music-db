@@ -6,28 +6,23 @@ import Song from './song.jsx';
 const Songs = React.createClass({
     getInitialState(){
         return {
-            songs: {}
-        }
-
+            songs: []
     },
     componentDidMount(){
         $.ajax({
             url: '/api/songs',
             method: 'GET'
         }).done((data)=>{
-            console.log('data:',data)
             this.setState({songs: data})
         })
     },
     render(){
-        console.log(this.state.songs)
+        console.log('songs state:',this.state.songs[0]);
+        // let list= this.state.songs.map((songs,indx)=>{ return <Song title={songs.title} url={songs.youtube_url}key={indx}/>});
         return <div>
-            <h1>Songs List</h1>
-            <ul>
-                    <Song songs={this.state.songs}/>
-            </ul>
-        </div>
+                <h1>Songs List</h1>
+              </div>
     }
-})
+});
 
 export default Songs;

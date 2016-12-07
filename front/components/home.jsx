@@ -20,14 +20,14 @@ const Songs = React.createClass({
         })
     },
     render(){
-        console.log(this.state.songs)
+        console.log('songs state:',this.state.songs)
         return <div>
             <h1>Songs List</h1>
             <ul>
-                    <Song songs={this.state.songs}/>
+                    <Song song={this.state.songs}/>
             </ul>
         </div>
     }
-})
+});
 
 export default Songs;

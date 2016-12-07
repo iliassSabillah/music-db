@@ -1,17 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Songs from './components/songs';
+import {Router,Route, browserHistory,IndexRoute} from 'react-router';
+import Songs from './components/songs.jsx';
+// import Navbar from './components/navbar';
+
 
 const App = ()=>(
-    <div>
-        <h1>Hello</h1>
-        <Songs/>
-    </div>
-
+    return (<div>
+             <h1>Hello</h1>
+          </div>
+          )
 )
 
 ReactDOM.render(
-    <App/>,
+        <Route path="/" component={App}>
+            <IndexRoute component={App} />
+            <Route path="/songs" component={Songs}/>
+        </Route>
+  ,
     document.getElementById('app')
 )
 
